@@ -7,34 +7,28 @@ import static org.assertj.core.api.Assertions.*;
 class PointTest {
     @Test
     void when00To20Then2() {
-        int x1 = 0;
-        int y1 = 0;
-        int x2 = 2;
-        int y2 = 0;
+        Point pointFirst = new Point(0, 0);
+        Point pointSecond = new Point(2, 0);
         double expected = 2;
-        double output = Point.distance(x1, y1, x2, y2);
+        double output = pointFirst.distance(pointSecond);
         assertThat(output).isEqualTo(expected, withPrecision(0.01));
     }
 
     @Test
     void when21To2Minus2Then3() {
-        int x1 = 2;
-        int y1 = 1;
-        int x2 = 2;
-        int y2 = -2;
+        Point pointFirst = new Point(2, 1);
+        Point pointSecond = new Point(2, -2);
         double expected = 3;
-        double output = Point.distance(x1, y1, x2, y2);
+        double output = pointFirst.distance(pointSecond);
         assertThat(output).isEqualTo(expected, withPrecision(0.01));
     }
 
     @Test
     void when31to2Minus1Then2Dot24() {
-        int x1 = 3;
-        int y1 = 1;
-        int x2 = 2;
-        int y2 = -1;
+        Point pointFirst = new Point(3, 1);
+        Point pointSecond = new Point(2, -1);
         double expected = 2.24;
-        double output = Point.distance(x1, y1, x2, y2);
+        double output = pointFirst.distance(pointSecond);
         assertThat(output).isEqualTo(expected, withPrecision(0.01));
     }
 }
